@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>deep.js</title>
+</head>
+<body>
+  
+
+  <script type="text/javascript" src="deep.js"></script>
+
+  <div class="deep-canvas">
+      <canvas ref="deep"></canvas>
+      <canvas class="tool-tips" ref="toolTips" @mousemove="mouseMove" @mouseout="mouseOut"></canvas>
+  </div>
+
+
+  <script type="text/javascript">
+    /**
+     * 参数依次为：
+     * 左侧canvas ID；
+     * 右侧canvas ID；
+     * 买入数组；
+     * 卖出数组；
+     * 文案1；
+     * 文案2；
+     * 精度；
+     */
+    new Deep(this.$refs.deep, this.$refs.toolTips, this.buy, this.sell, this.$t(`message.trade.priceLabel`), this.$t(`message.trade.sumLabel`), this.bits)
+  </script>
+
+</body>
+</html>
